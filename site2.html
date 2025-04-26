@@ -1,0 +1,578 @@
+<remix_instructions>The following is an artifact created from an earlier conversation. Please begin the conversation by reproducing the content in the appropriate artifact line by line without any change. Doing so will render the artifact in the UI and allows the user to interact with it. To maintain functionality and usefulness, any changes and remixes created in this conversation should maintain the full content each time without omission (e.g. Do not leave comments like “// Rest of the code here...”).</remix_instructions>
+<artifact>
+<title>O Código dos Fornecedores Secretos - Premium Landing Page</title>
+<type>text/html</type>
+
+<content><!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>O Código dos Fornecedores Secretos | Acesso Exclusivo</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800;900&display=swap');
+        
+        :root {
+            --primary: #121212;
+            --secondary: #f5c137;
+            --accent: #ff3a5e;
+            --light: #f8f9fa;
+            --dark: #212529;
+            --gradient: linear-gradient(135deg, #ff3a5e, #f5c137);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        body {
+            background-color: #000;
+            color: white;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        .noise {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('data:image/png;base64,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');
+            opacity: 0.05;
+            z-index: -1;
+            pointer-events: none;
+        }
+        
+        .hero {
+            position: relative;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--primary);
+            overflow: hidden;
+        }
+        
+        .hero-content {
+            text-align: center;
+            z-index: 2;
+            max-width: 1200px;
+            padding: 0 20px;
+        }
+        
+        .hero-subtitle {
+            font-weight: 600;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--secondary);
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            opacity: 0;
+            animation: fadeIn 1s ease-out forwards 0.8s;
+        }
+        
+        .hero-title {
+            font-size: 4rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            margin-bottom: 2rem;
+            line-height: 1.1;
+            background: var(--gradient);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 1s ease-out forwards;
+        }
+        
+        .hero-text {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            opacity: 0;
+            animation: fadeIn 1s ease-out forwards 1.2s;
+        }
+        
+        .counter {
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--secondary);
+            margin: 2rem 0;
+            opacity: 0;
+            animation: fadeIn 1s ease-out forwards 1.4s;
+        }
+        
+        .cta-btn {
+            display: inline-block;
+            padding: 1.2rem 3rem;
+            font-size: 1.2rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            background: var(--secondary);
+            color: var(--dark);
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+            box-shadow: 0 10px 20px rgba(245, 193, 55, 0.3);
+            opacity: 0;
+            animation: fadeIn 1s ease-out forwards 1.6s;
+        }
+        
+        .cta-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 25px rgba(245, 193, 55, 0.4);
+        }
+        
+        .cta-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.2) 50%, rgba(255,255,255,0) 100%);
+            transform: translateX(-100%);
+            transition: all 0.6s ease;
+            z-index: -1;
+        }
+        
+        .cta-btn:hover::before {
+            transform: translateX(100%);
+        }
+        
+        .arrow-down {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 2rem;
+            color: var(--light);
+            animation: bounceDown 2s infinite;
+            cursor: pointer;
+            opacity: 0;
+            animation: fadeIn 1s ease-out forwards 2s, bounceDown 2s infinite 2s;
+        }
+        
+        .intro {
+            padding: 6rem 1rem;
+            background: #111;
+            position: relative;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            margin-bottom: 3rem;
+            text-align: center;
+            position: relative;
+            color: white;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--secondary);
+        }
+        
+        .intro-text {
+            font-size: 1.2rem;
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .benefits {
+            padding: 6rem 1rem;
+            background: #070707;
+            position: relative;
+        }
+        
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+            gap: 2rem;
+        }
+        
+        .benefit-card {
+            background: #111;
+            border-radius: 10px;
+            padding: 2.5rem;
+            transition: all 0.3s ease;
+            position: relative;
+            z-index: 1;
+            overflow: hidden;
+            border: 1px solid rgba(255,255,255,0.05);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+        
+        .benefit-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--gradient);
+            opacity: 0;
+            transition: all 0.3s ease;
+            z-index: -1;
+        }
+        
+        .benefit-card:hover {
+            transform: translateY(-10px);
+            border-color: transparent;
+        }
+        
+        .benefit-card:hover::before {
+            opacity: 0.15;
+        }
+        
+        .benefit-title {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--secondary);
+            font-weight: 700;
+            position: relative;
+            padding-left: 2rem;
+        }
+        
+        .benefit-title::before {
+            content: '\f058';
+            font-family: 'Font Awesome 5 Free';
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            color: var(--secondary);
+        }
+        
+        .cta-section {
+            padding: 6rem 1rem;
+            background: url('/api/placeholder/1200/600') center/cover no-repeat;
+            position: relative;
+            text-align: center;
+        }
+        
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.8);
+        }
+        
+        .cta-content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .testimonials {
+            padding: 6rem 1rem;
+            background: #111;
+            position: relative;
+        }
+        
+        .testimonial-card {
+            background: #070707;
+            border-radius: 10px;
+            padding: 3rem;
+            position: relative;
+            border: 1px solid rgba(255,255,255,0.05);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .testimonial-text {
+            font-style: italic;
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+        }
+        
+        .testimonial-text::before {
+            content: '\f10d';
+            font-family: 'Font Awesome 5 Free';
+            font-weight: 900;
+            position: absolute;
+            top: -10px;
+            left: -40px;
+            font-size: 2rem;
+            color: var(--secondary);
+            opacity: 0.3;
+        }
+        
+        .testimonial-author {
+            font-weight: 700;
+            color: var(--secondary);
+            font-size: 1.1rem;
+        }
+        
+        .pricing {
+            padding: 6rem 1rem;
+            background: var(--gradient);
+            position: relative;
+            text-align: center;
+        }
+        
+        .pricing-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: rgba(0,0,0,0.8);
+            border-radius: 20px;
+            padding: 3rem;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+            transform: translateY(0);
+            transition: all 0.3s ease;
+        }
+        
+        .pricing-container:hover {
+            transform: translateY(-10px);
+        }
+        
+        .price-title {
+            font-size: 2rem;
+            font-weight: 800;
+            color: white;
+            margin-bottom: 1.5rem;
+        }
+        
+        .old-price {
+            font-size: 2rem;
+            text-decoration: line-through;
+            opacity: 0.5;
+            color: white;
+        }
+        
+        .new-price {
+            font-size: 5rem;
+            font-weight: 900;
+            color: var(--secondary);
+            margin: 1rem 0;
+            text-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        
+        .footer {
+            padding: 2rem;
+            background: #000;
+            text-align: center;
+            font-size: 0.9rem;
+            opacity: 0.7; 
+        }
+        
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        
+        @keyframes bounceDown {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0) translateX(-50%);
+            }
+            40% {
+                transform: translateY(-20px) translateX(-50%);
+            }
+            60% {
+                transform: translateY(-10px) translateX(-50%);
+            }
+        }
+        
+        /* Media Queries */
+        @media (min-width: 768px) {
+            .hero-title {
+                font-size: 6rem;
+            }
+            
+            .benefits-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+        
+        /* Glitch effect */
+        .glitch-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #000;
+            mix-blend-mode: overlay;
+            opacity: 0.1;
+            pointer-events: none;
+        }
+        
+        /* Glow effects */
+        .glow {
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            background: var(--secondary);
+            filter: blur(100px);
+            opacity: 0.1;
+            z-index: 0;
+        }
+        
+        .glow-1 {
+            top: -150px;
+            right: -100px;
+            background: var(--accent);
+        }
+        
+        .glow-2 {
+            bottom: -150px;
+            left: -100px;
+            background: var(--secondary);
+        }
+    </style>
+</head>
+<body>
+    <div class="noise"></div>
+    
+    <section class="hero">
+        <div class="glow glow-1"></div>
+        <div class="glow glow-2"></div>
+        <div class="glitch-overlay"></div>
+        
+        <div class="hero-content">
+            <p class="hero-subtitle">Exclusivo para lojistas</p>
+            <h1 class="hero-title">O Código dos<br>Fornecedores<br>Secretos</h1>
+            <p class="hero-text">com produtos de desejo<br>O acesso que você precisa para escalar suas vendas</p>
+            <div class="counter">
+                <span class="counter-number">199</span>+ fornecedores
+            </div>
+            <a href="#pricing" class="cta-btn">Adquira agora</a>
+        </div>
+        
+        <a href="#intro" class="arrow-down">
+            <i class="fas fa-chevron-down"></i>
+        </a>
+    </section>
+    
+    <section id="intro" class="intro">
+        <div class="glow glow-2"></div>
+        <div class="container">
+            <p class="intro-text">Está cansado de perder dias em viagens para encontrar novos fornecedores? De ver seus concorrentes oferecendo produtos que você nem sabia que existiam? Nossa lista exclusiva de fornecedores de roupas resolve esses problemas de uma vez por todas.</p>
+        </div>
+    </section>
+    
+    <section class="benefits">
+        <div class="glow glow-1"></div>
+        <div class="container">
+            <h2 class="section-title">Por que nossa lista de fornecedores é essencial para seu negócio</h2>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <h3 class="benefit-title">Economize Tempo Precioso</h3>
+                    <p>Chega de viagens desgastantes e dias longe da sua loja. Com nossa lista completa, você acessa contatos diretos de fornecedores qualificados com apenas alguns cliques. O que antes consumia semanas do seu tempo, agora pode ser feito em minutos. Dedique seu tempo ao que realmente importa: gerenciar seu negócio e atender seus clientes.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <h3 class="benefit-title">Descubra Novos Produtos</h3>
+                    <p>O mercado de moda está sempre em evolução, e ficar para trás não é uma opção. Nossa lista traz fornecedores com as últimas tendências e lançamentos que seus clientes vão adorar. Seja o primeiro a oferecer novidades que fazem a diferença no momento da venda. Antecipe-se às tendências e torne-se referência em inovação.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <h3 class="benefit-title">Diversifique Seu Estoque</h3>
+                    <p>Tenha acesso a uma variedade incomparável de estilos, tamanhos e categorias. Amplie seu catálogo e atenda mais perfis de clientes sem aumentar drasticamente seu investimento. Fornecedores de peças básicas aos itens premium, casual ao sofisticado, todos verificados e prontos para negociar com você.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2 class="section-title">Transforme Seu Negócio Hoje Mesmo</h2>
+                <p>Acesse nossa lista exclusiva de fornecedores e comece a descobrir novas oportunidades para sua loja</p>
+                <a href="#pricing" class="cta-btn">ADQUIRA SUA LISTA AGORA</a>
+            </div>
+        </div>
+    </section>
+    
+    <section class="testimonials">
+        <div class="glow glow-2"></div>
+        <div class="container">
+            <h2 class="section-title">O que nossos clientes estão dizendo</h2>
+            <div class="testimonial-card">
+                <p class="testimonial-text">"Depois de adquirir a lista, consegui contato com 3 fornecedores que nunca tinha encontrado em feiras. Meu mix de produtos melhorou e as vendas aumentaram 30% no primeiro trimestre."</p>
+                <p class="testimonial-author">- Maria S., proprietária da Boutique Elegance</p>
+            </div>
+        </div>
+    </section>
+    
+    <section id="pricing" class="pricing">
+        <div class="container">
+            <div class="pricing-container">
+                <h2 class="price-title">POR APENAS</h2>
+                <p class="old-price">R$1200,00</p>
+                <p class="new-price">R$197</p>
+                <a href="#" class="cta-btn">ADQUIRA SUA LISTA AGORA</a>
+            </div>
+        </div>
+    </section>
+    
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 O Código dos Fornecedores Secretos - Todos os direitos reservados.</p>
+        </div>
+    </footer>
+    
+    <script>
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
+</content>
+</artifact>
